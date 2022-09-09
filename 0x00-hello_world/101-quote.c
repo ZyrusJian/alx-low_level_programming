@@ -10,10 +10,10 @@
  */
 int main(void)
 {
-char err[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+char err[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 int er = strlen(err);
 
-fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19", 1,
+fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 1,
 	er, stderr);
 
 return (1);
