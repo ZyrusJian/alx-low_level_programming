@@ -3,11 +3,15 @@
  * a string exactly followed by a newline.
 */
 #include<stdio.h>
+/**
+ * main - displays a string
+ * Return: o for succes.
+ */
 int main(void)
 {
-char sentence[] = "\"Programming is like building a multilingual puzzle\n";
+char str[] = "\"Programming is like building a multilingual puzzle\n";
 
-puts(sentence);
+puts(str);
 
 return (0);
 }
