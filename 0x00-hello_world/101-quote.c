@@ -12,8 +12,8 @@ int main(void)
 char err[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 int er = sizeof(err);
 
-fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19",
-	er, 1, stderr);
+fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19", 1,
+	er, stderr);
 
 return (1);
 }
