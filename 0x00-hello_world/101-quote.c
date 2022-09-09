@@ -12,7 +12,7 @@ int main(void)
 char err[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 int er = sizeof(err);
 
-fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
+fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19",
 	er, 1, stderr);
 
 return (1);
