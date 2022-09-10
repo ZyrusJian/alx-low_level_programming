@@ -12,23 +12,13 @@
  */
 int main(void)
 {
-	int n, k;
+	int n;
 
 	for (n = 0; n < 10; n++)
 	{
-		for (k = 0 ; k < 10 ; k++)
-		{
-			if (n <= k)
-			{
-				k++;
-			}
-			else
-			{
-				putchar(n + '0');
-				putchar(k + '0');
-				putchar(',');
-			}
-		}
+		putchar(n + '0');
+		putchar(',');
+		putchar(' ');
 	}
 
 	putchar('\n');
