@@ -22,7 +22,7 @@ int main(void)
 		{
 			for (j = 2; j < 10; j++)
 			{
-				if (j > k)
+				if (k > n && j > k)
 				{
 					putchar(n + '0');
 					putchar(k + '0');
