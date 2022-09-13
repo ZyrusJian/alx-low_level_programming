@@ -1,12 +1,11 @@
 #include<stdio.h>
+#include "main.h"
 /**
  * main - prints _putchar using custom function
  * @c: characters to write
  *
  * Return: 0 for succes.
  */
-
-int _putchar(char c);
 
 int main(void)
 {
