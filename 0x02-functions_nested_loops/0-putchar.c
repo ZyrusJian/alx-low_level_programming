@@ -2,7 +2,6 @@
 #include "main.h"
 /**
  * main - prints _putchar using custom function
- * @c: characters to write
  *
  * Return: 0 for succes.
  */
