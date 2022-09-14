@@ -27,15 +27,18 @@ void times_table(void)
 			{
 				_putchar(p + '0');
 			}
-			if (k < 9)
+			if ((k < 9) && (p >= 10))
 			{
 				_putchar(',');
 				_putchar(' ');
-			if ((p <= 9) && (k < 9))
+			}
+			else if ((p <= 9) && (k < 9))
 			{
+				_putchar(',');
+				_putchar(' ');
 				_putchar(' ');
 			}
-			}
+
 			k++;
 		}
 		_putchar('\n');
