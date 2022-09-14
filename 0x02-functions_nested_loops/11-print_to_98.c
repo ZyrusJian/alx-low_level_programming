@@ -22,6 +22,7 @@ void print_to_98(int n)
 				putchar(' ');
 			}
 		}
+		printf("\n");
 	}
 	else if (n > 98)
 	{
@@ -34,5 +35,6 @@ void print_to_98(int n)
 				putchar(' ');
 			}
 		}
+		printf("\n");
 	}
 }
