@@ -14,6 +14,7 @@ void times_table(void)
 	while (n < 10)
 	{
 		k = 0;
+		p = 0;
 
 		while (k < 10)
 		{
@@ -27,17 +28,8 @@ void times_table(void)
 			{
 				_putchar(p + '0');
 			}
-			if ((k < 9) && (p >= 10))
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-			else if ((p <= 9) && (k < 9))
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-			}
+			_putchar(',');
+			_putchar(' ');
 
 			k++;
 		}
