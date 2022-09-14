@@ -37,10 +37,10 @@ void jack_bauer(void)
 
 				j++;
 			}
-			if (n != 2 &&  k != 3)
-				k++;
-			else
+			if ((n == 2) &&  (k == 3))
 				break;
+			else
+				k++;
 		}
 
 		n++;
