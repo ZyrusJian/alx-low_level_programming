@@ -31,10 +31,10 @@ void times_table(void)
 			{
 				_putchar(',');
 				_putchar(' ');
-				if (p <= 9)
-				{
-					_putchar(' ');
-				}
+			if ((p <= 9) && (k < 9))
+			{
+				_putchar(' ');
+			}
 			}
 			k++;
 		}
