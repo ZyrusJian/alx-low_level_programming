@@ -1,5 +1,5 @@
 /**
- * _islower - checks whether a character is lower case.
+ * _isupper - checks whether a character is upper case.
  * @c: character to be checked.
  *
  * Return: 1 for true. 0 for false.
