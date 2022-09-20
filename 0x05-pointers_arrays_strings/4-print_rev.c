@@ -16,7 +16,7 @@ void print_rev(char *s)
 		s++;
 	}
 
-	s = s - i + 1;
+	s = s - i;
 
 	while (i > 0)
 	{
