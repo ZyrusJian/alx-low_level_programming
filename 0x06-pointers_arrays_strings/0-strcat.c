@@ -12,31 +12,23 @@ int _strlen(char *str);
 
 char *_strcat(char *dest, char *src)
 {
-	int l1, l2, lt;
+	int l1, l2, lt, j;
 
-	l1 = _strlen(*dest);
-	l2 = _strlen(*src);
+	l1 = _strlen(dest);
+	l2 = _strlen(src);
 	lt = l1 + l2 + 1;
 
-	char catstr[lt];
-	int j = 0;
-
-	while (*dest != '\0')
-	{
-		catstr[j] = *dest;
-		j++;
-		dest++;
-	}
+	j = 0;
 
 	while (*src != '\0')
 	{
-		catstr[j] = *src;
+		dest[l1 + j] = *src;
 		j++;
 		src++;
 	}
-	catstr[lt - 1] = '\0';
+	dest[lt - 1] = '\0';
 
-	return (*dest = &catstr);
+	return (dest);
 }
 
 /**
@@ -48,7 +40,7 @@ char *_strcat(char *dest, char *src)
 
 int _strlen(char *str)
 {
-	int i;
+	int i = 0;
 
 	while (*str != '\0')
 	{
