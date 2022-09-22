@@ -16,7 +16,7 @@ int _strcmp(char *s1, char *s2)
 
 	do {
 		if (*s1 == '\0')
-		return (sum += *s1 - *s2);
+			return (sum += *s1 - *s2);
 		sum += *s1 - *s2;
 		s1++;
 		s2++;
