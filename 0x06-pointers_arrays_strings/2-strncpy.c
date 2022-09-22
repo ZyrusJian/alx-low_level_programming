@@ -13,11 +13,7 @@ int _strlen(char *str);
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int l1, l2, lt, j;
-
-	l1 = _strlen(dest);
-	l2 = _strlen(src);
-	lt = l1 + l2 + 1;
+	int j;
 
 	j = 0;
 
