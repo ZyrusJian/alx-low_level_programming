@@ -1,27 +1,44 @@
 #include "main.h"
 
 /**
- * _strcmp - compare the strings s1 to s2
- * @s1: The string target
- * @s2: the string target
+ * cap_string - capitalize all words.
+ * @s: The string target
  *
- * Return: sum after comparing.
+ * Return: s after computing
  */
 
-int _strcmp(char *s1, char *s2)
+char *cap_string(char *s)
 {
-	int sum;
+	if (*s >= 97 && *s <= 122)
+		s[0] = *s - 32;
 
-	sum = 0;
-
-	do {
-		if (*s1 == '\0')
-			return (sum += *s1 - *s2);
-		sum += *s1 - *s2;
-		s1++;
-		s2++;
-	} while (*s1 == *s2);
-
-	return (sum);
+	while (*s != '\0')
+	{
+		switch (*s)
+		{
+			case ' ':
+			case '\t':
+			case '\n':
+			case ',':
+			case '.':
+			case ';':
+			case '!':
+			case '?':
+			case '\"':
+			case '(':
+			case ')':
+			case '{':
+			case '}':
+				s++;
+				if (*s >= 97 && *s <= 122)
+					*s = *s - 32;
+				s++;
+				break;
+			default:
+				s++;
+				break;
+		}
+	}
+	return (s);
 }
 
