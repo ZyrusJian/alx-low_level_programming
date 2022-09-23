@@ -1,27 +1,42 @@
 #include "main.h"
 
 /**
- * _strcmp - compare the strings s1 to s2
- * @s1: The string target
- * @s2: the string target
+ * leet - encodes the strings in to 1337
+ * @s: The string target
  *
- * Return: sum after comparing.
+ * Return: s after computing.
  */
 
-int _strcmp(char *s1, char *s2)
+char *leet(char *s)
 {
-	int sum;
-
-	sum = 0;
-
-	do {
-		if (*s1 == '\0')
-			return (sum += *s1 - *s2);
-		sum += *s1 - *s2;
-		s1++;
-		s2++;
-	} while (*s1 == *s2);
-
-	return (sum);
+	while (*s != '\0')
+	{
+		if (*s == 'a' || *s == 'A')
+		{
+			*s = 4;
+		}
+		else if (*s == 'e' || *s == 'E')
+		{
+			*s = 3;
+		}
+		else if (*s == 'o' || *s == 'O')
+		{
+			*s = 0;
+		}
+		else if (*s == 't' || *s == 'T')
+		{
+			*s = 7;
+		}
+		else if (*s == 'l' || *s == 'L')
+		{
+			*s = 1;
+		}
+		else
+		{
+			s++;
+			continue;
+		}
+		s++;
+	}
 }
 
