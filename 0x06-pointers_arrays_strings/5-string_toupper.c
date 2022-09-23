@@ -1,27 +1,33 @@
 #include "main.h"
 
 /**
- * _strcmp - compare the strings s1 to s2
- * @s1: The string target
- * @s2: the string target
+ * string_toupper - chane all lowercase letter to uppercase.
+ * @s: The string target
  *
  * Return: sum after comparing.
  */
 
-int _strcmp(char *s1, char *s2)
+char *string_toupper(char *s)
 {
-	int sum;
+	int j;
 
-	sum = 0;
+	j = 0;
 
-	do {
-		if (*s1 == '\0')
-			return (sum += *s1 - *s2);
-		sum += *s1 - *s2;
-		s1++;
-		s2++;
-	} while (*s1 == *s2);
-
-	return (sum);
+	while (*s != '\0')
+	{
+		if (*s >= 97 && *s <= 122)
+		{
+			s[j] = *s - 32;
+			j++;
+		}
+		else
+		{
+			s++;
+			j++;
+			continue;
+		}
+		s++;
+	}
+	return (s);
 }
 
