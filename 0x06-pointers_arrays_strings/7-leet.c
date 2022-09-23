@@ -13,23 +13,23 @@ char *leet(char *s)
 	{
 		if (*s == 'a' || *s == 'A')
 		{
-			*s = 4;
+			*s = 4 + '0';
 		}
 		else if (*s == 'e' || *s == 'E')
 		{
-			*s = 3;
+			*s = 3 + '0';
 		}
 		else if (*s == 'o' || *s == 'O')
 		{
-			*s = 0;
+			*s = 0 + '0';
 		}
 		else if (*s == 't' || *s == 'T')
 		{
-			*s = 7;
+			*s = 7 + '0';
 		}
 		else if (*s == 'l' || *s == 'L')
 		{
-			*s = 1;
+			*s = 1 + '0';
 		}
 		else
 		{
@@ -38,5 +38,6 @@ char *leet(char *s)
 		}
 		s++;
 	}
+	return (s);
 }
 
