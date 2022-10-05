@@ -7,7 +7,7 @@
  * @argv: arg_vector
  * @argc: arg_counter
  *
- * Return: On success 1.
+ * Return: On success 0. failuer 1.
  *
  */
 
@@ -20,12 +20,13 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		printf("Error\n");
+
+		return (1);
 	}
 	else if (argc == 3)
 	{
 		mul = atoi(argv[1]) * atoi(argv[2]);
 		printf("%d\n", mul);
 	}
-
-	return (1);
+	return (0);
 }
