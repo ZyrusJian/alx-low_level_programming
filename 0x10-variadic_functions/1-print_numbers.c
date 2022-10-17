@@ -47,18 +47,18 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	int num;
 	unsigned int i;
 
-	if (n != 0 && separator )
+	if (n != 0 && separator)
 	{
-		va_start (ap, n);
+		va_start(ap, n);
 
 		for (i = 0; i < n; i++)
 		{
-			num = va_arg (ap, int);
+			num = va_arg(ap, int);
 			printf("%i", num);
 			if (i != (n - 1))
 				insert_separator(separator);
 		}
 		printf("\n");
-		va_end (ap);
+		va_end(ap);
 	}
 }
