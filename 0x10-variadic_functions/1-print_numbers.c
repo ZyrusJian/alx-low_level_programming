@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
@@ -9,29 +10,22 @@
  *
  */
 
-void insert_separator(const char *s)
+char insert_separator(const char *s)
 {
-	char str[3];
 	int i;
-	int len1, len2;
+	char *str;
 
-	len1 = sizeof(*s);
-	len2 = sizeof(str);
+	str = malloc(strlen(s) * sizeof(char));
 	i = 0;
-	if (len1 <= len2)
+
+
+	while (*s != '\0')
 	{
-		while (*s != '\0')
-		{
 		str[i] = *s;
 		s++;
 		i++;
-		}
-		printf("%s", str);
 	}
-	else if (len1 > len2)
-	{
-		printf("Error");
-	}
+	return (printf("%s", str));
 }
 
 /**
@@ -47,7 +41,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	int num;
 	unsigned int i;
 
-	if (n != 0 && separator)
+	if ((n != 0) && (separator != NULL))
 	{
 		va_start(ap, n);
 
