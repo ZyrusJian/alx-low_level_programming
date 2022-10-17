@@ -2,13 +2,13 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all - prints sum of args
+ * print_numbers - prints numbers separated by separator
  * @n: arg count
+ * @separator: 
  *
- * Return: sum
  */
 
-int sum_them_all(const unsigned int n, ...)
+void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	int sum;
