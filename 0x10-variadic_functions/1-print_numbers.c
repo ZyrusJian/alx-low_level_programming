@@ -44,7 +44,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			num = va_arg (ap, int);
 			printf("%i", num);
-			insert_separator(separator);
+			if (i != (n - 1))
+				insert_separator(separator);
 		}
 		printf("\n");
 		va_end (ap);
