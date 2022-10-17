@@ -48,7 +48,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		for (i = 0; i < n; i++)
 		{
 			str = va_arg(ap, char*);
-			printf("%s", str);
+			if (str == NULL)
+			{
+				printf("(nill)");
+			}
+			else
+			{
+				printf("%s", str);
+			}
 			if (i != (n - 1))
 				insert_separator(separator);
 		}
