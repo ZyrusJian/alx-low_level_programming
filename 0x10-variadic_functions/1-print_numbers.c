@@ -10,7 +10,7 @@
 
 void insert_separator(const char *s)
 {
-	char str[sizeof(*s)];
+	char str[3];
 	int i;
 
 	i = 0;
