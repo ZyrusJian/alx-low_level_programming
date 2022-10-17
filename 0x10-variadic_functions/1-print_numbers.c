@@ -2,9 +2,31 @@
 #include <stdarg.h>
 
 /**
+ * insert_separator - inserts separator
+ * @s: separating char
+ *
+ *
+ */
+
+void insert_separator(const char *s)
+{
+	char str[sizeof(*s)];
+	int i;
+
+	i = 0;
+	while (*s != '\0')
+	{
+		str[i] = *s;
+		s++;
+		i++;
+	}
+	printf("%s", str);
+}
+
+/**
  * print_numbers - prints numbers separated by separator
  * @n: arg count
- * @separator: 
+ * @separator: insersts separating character
  *
  */
 
@@ -22,11 +44,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			num = va_arg (ap, int);
 			printf("%i", num);
-			while (*separator != '\0')
-			{
-				printf("%c", *separator);
-				separator++;
-			}
+			insert_separator(separator);
 		}
 		printf("\n");
 		va_end (ap);
