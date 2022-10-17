@@ -7,7 +7,7 @@
  * insert_separator - inserts separator
  * @s: separating char
  *
- *
+ * Return: separator
  */
 
 char insert_separator(const char *s)
