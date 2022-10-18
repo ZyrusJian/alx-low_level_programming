@@ -41,7 +41,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	int num;
 	unsigned int i;
 
-	if (separator != NULL)
+	if ((separator != NULL) && (*separator != '\0'))
 	{
 		va_start(ap, n);
 
