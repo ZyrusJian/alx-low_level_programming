@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
@@ -15,7 +16,7 @@ char insert_separator(const char *s)
 	int i;
 	char *str;
 
-	str = malloc(strlen(s) * sizeof(char));
+	str = (char *)malloc(strlen(s) * sizeof(char));
 	i = 0;
 
 
@@ -38,17 +39,19 @@ char insert_separator(const char *s)
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
-	int num;
+	int num, k;
 	unsigned int i;
 
 	if (separator != NULL)
 	{
 		va_start(ap, n);
+		k = 0;
 
 		for (i = 0; i < n; i++)
 		{
 			num = va_arg(ap, int);
-			printf("%i", num);
+			k = isdigit(num);
+			printf("%d-isint%d", num, k);
 			if (i != (n - 1))
 				insert_separator(separator);
 		}

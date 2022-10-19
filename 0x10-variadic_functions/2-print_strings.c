@@ -15,7 +15,7 @@ char insert_separator(const char *s)
 	int i;
 	char *str;
 
-	str = malloc(strlen(s) * sizeof(char));
+	str = (char *)malloc(strlen(s) * sizeof(char));
 	i = 0;
 
 
