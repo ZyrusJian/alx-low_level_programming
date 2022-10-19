@@ -1,77 +1,53 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdarg.h>
-
-/**
- * insert_separator - inserts separator
- * @s: separating char
- *
- * Return: separator
- */
-
-int fmt_id(const char *s)
-{
-	int i;
-	int *id;
-
-	id = (int *)malloc(strlen(s) * sizeof(char));
-	i = 0;
-
-
-	while (*s != '\0')
-	{
-		if (*s ==
-		str[i] = *s;
-		s++;
-		i++;
-	}
-	return (printf("%s", str));
-}
+#include "variadic_functions.h"
 
 /**
  * print_all - prints args identified by format
  * @format: format identifier
  *
  */
-
-void print_all(const char * const format, ...);
+void print_all(const char * const format, ...)
 {
-	va_list ap;
-	char *str;
-	unsigned int i;
-	int nullcount;
+	va_list list;
+	int len, count, num;
+	char c, *str;
+	char *fmt;
+	float ft;
 
-	nullcount = 0;
-
-	if (separator != NULL)
+	count = 0;
+	len = strlen(format);
+	*fmt =strcpy(format);
+	if (format != NULL)
 	{
-		va_start(ap, n);
-
-		for (i = 0; i < n; i++)
+		while (*fmt != '\0')
 		{
-			str = va_arg(ap, char*);
-			if ((str == NULL) || (*str == '\0'))
-				nullcount++;
-		}
-		va_end(ap);
-		if (nullcount > 0)
-		{
-			printf("(nill)\n");
-		}
-		else
-		{
-			va_start(ap, n);
-
-			for (i = 0; i < n; i++)
+			va_start(list, format);
+			switch (*fmt)
 			{
-				str = va_arg(ap, char*);
-				printf("%s", str);
-				if (i != (n - 1))
-					insert_separator(separator);
+				case 'c':
+					c = (char) va_arg(list + count, int);
+					printf("%c", c);
+					break;
+				case 'i':
+					num = va_arg(list + count, int);
+					printf("%d", num);
+					break;
+				case 'f':
+					ft = (float) va_arg(list + count, double);
+					printf("%f", ft);
+					break;
+				case 's':
+					str = va_arg(list + count, char*);
+					printf("%s", str);
+					break;
+				default:
+					break;
 			}
-			printf("\n");
-			va_end(ap);
+			va_end(list);
+			if (count != (len - 1))
+				printf(", ");
+			fmt++;
+			count++;
 		}
+		printf("\n");
 	}
 }
