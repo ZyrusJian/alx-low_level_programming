@@ -44,7 +44,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	nullcount = 0;
 
-	if ((separator != NULL) && (*separator))
+	if (separator != NULL)
 	{
 		va_start(ap, n);
 
