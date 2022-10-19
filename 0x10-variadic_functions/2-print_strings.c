@@ -44,14 +44,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	nullcount = 0;
 
-	if (separator != NULL)
+	if (((separator != NULL) || (*separator != '\0')) && (*separator))
 	{
 		va_start(ap, n);
 
 		for (i = 0; i < n; i++)
 		{
 			str = va_arg(ap, char*);
-			if (str == NULL)
+			if ((str == NULL) || (*str == '\0'))
 				nullcount++;
 		}
 		va_end(ap);

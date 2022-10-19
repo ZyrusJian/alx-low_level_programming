@@ -39,19 +39,17 @@ char insert_separator(const char *s)
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
-	int num, k;
+	int num;
 	unsigned int i;
 
-	if (separator != NULL)
+	if (((separator != NULL) || (*separator != '\0')) && (*separator))
 	{
 		va_start(ap, n);
-		k = 0;
 
 		for (i = 0; i < n; i++)
 		{
 			num = va_arg(ap, int);
-			k = isdigit(num);
-			printf("%d-isint%d", num, k);
+			printf("%d", num);
 			if (i != (n - 1))
 				insert_separator(separator);
 		}
