@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-
+#include <stdarg.h>
 /**
  * print_all - prints args identified by format
  * @format: format identifier
@@ -8,20 +8,19 @@
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	int len, count, num;
+	int len, count, num, i;
 	char c, *str;
-	char *fmt;
 	float ft;
 
-	count = 0;
 	len = strlen(format);
-	*fmt =strcpy(format);
 	if (format != NULL)
 	{
-		while (*fmt != '\0')
+		count = 0;
+		i = 0;
+		while (i < len)
 		{
 			va_start(list, format);
-			switch (*fmt)
+			switch (format[i])
 			{
 				case 'c':
 					c = (char) va_arg(list + count, int);
@@ -43,9 +42,9 @@ void print_all(const char * const format, ...)
 					break;
 			}
 			va_end(list);
-			if (count != (len - 1))
+			if (i != (len - 1))
 				printf(", ");
-			fmt++;
+			i++;
 			count++;
 		}
 		printf("\n");

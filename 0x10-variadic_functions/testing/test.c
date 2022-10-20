@@ -4,14 +4,16 @@
 
 void read_const(const char * const test)
 {
-	int i;
+	int i, len;
+	char *ptr;
 
 	i = 0;
-	while (*test != '\0')
+	len = strlen(test);
+	ptr = (char *) malloc(len * sizeof(char));
+	while (i < len)
 	{
-		
-		printf("%c\n", test[i]);
-		(*test)++;
+		ptr[i] = test[i];
+		printf("%c\n", ptr[i]);
 		i++;
 	}
 	printf("%s\n", test);
