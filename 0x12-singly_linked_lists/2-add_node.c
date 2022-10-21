@@ -3,6 +3,7 @@
 /**
  * add_node - adds a node to the list
  * @head: pointer to the existing list
+ * @str: new list element component
  *
  * Return: first node pointer
  */
