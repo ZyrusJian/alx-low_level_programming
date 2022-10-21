@@ -42,5 +42,7 @@ int main(void)
 	add_node_end(&head, "William");
 	add_node_end(&head, "Zee");
 	print_list(head);
+	free_list(head);
+	print_list(head);
 	return (0);
 }
