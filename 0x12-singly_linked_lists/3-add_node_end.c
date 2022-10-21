@@ -23,7 +23,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->len = strlen(new->str);
 	new->next = NULL;
 
-	while (set != NULL)
+	while (set->next != NULL)
 	{
 		set = set->next
 	}
