@@ -19,9 +19,16 @@ list_t *add_node_end(list_t **head, const char *str)
 		printf("Error\n");
 		return (NULL);
 	}
-	new->str = strdup(str);
-	new->len = strlen(new->str);
-	new->next = NULL;
+	if (str != NULL)
+	{
+		new->str = strdup(str);
+		new->len = strlen(new->str);
+		new->next = NULL;
+	}
+	else
+	{
+		return (NULL);
+	}
 
 	if (set == NULL)
 	{
@@ -36,6 +43,5 @@ list_t *add_node_end(list_t **head, const char *str)
 		}
 		set->next = new;
 	}
-/*	free(new);*/
 	return (*head);
 }
