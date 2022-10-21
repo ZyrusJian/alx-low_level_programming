@@ -1,15 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void _first(void) __attribute__ ((constructor));
+__attribute__ ((constructor)) void _first(void);
 
 /**
  * _first - prints before main
- * 
+ *
  *
  */
 
-void _first(void) __attribute__ ((constructor))
+__attribute__ ((constructor)) void _first(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
