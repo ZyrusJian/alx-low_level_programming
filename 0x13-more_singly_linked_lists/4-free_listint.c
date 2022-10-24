@@ -21,7 +21,5 @@ void free_listint(listint_t *head)
 		free(head);
 		head = set;
 	}
-	head = NULL;
-	if (head == NULL)
-		exit(0);
+
 }
