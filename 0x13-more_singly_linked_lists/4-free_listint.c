@@ -10,7 +10,6 @@ void free_listint(listint_t *head)
 {
 	listint_t *set;
 
-	set = NULL;
 	if (head == NULL)
 		exit(0);
 
@@ -19,7 +18,6 @@ void free_listint(listint_t *head)
 	while (set != NULL)
 	{
 		set = set->next;
-		free(head->n);
 		free(head);
 		head = set;
 	}
