@@ -18,13 +18,18 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		return (NULL);
 
 	set = head;
-	while ((k != index) && (set != NULL))
+	while ((k != index) || (set != NULL))
 	{
 		set = set->next;
 		k++;
 	}
-	if (k == index)
+	if ((k == index) && (set != NULL))
+	{
 		return (set);
+	}
 	else if (set == NULL)
+	{
 		return (NULL);
+	}
+	return (NULL);
 }
