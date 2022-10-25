@@ -30,7 +30,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			prv = prv->next;
 		rmv = set;
 		set = set->next;
-		prv->next =set;
+		prv->next = set;
 		rmv->next = NULL;
 		free(rmv);
 		return (1);
