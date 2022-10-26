@@ -18,22 +18,22 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (-1);
 
 	set = (*head);
-	while ((k != index) || (set != NULL))
+	prv = (*head);
+	while ((k <= index) || (set != NULL))
 	{
+		if ((k == index) && (set != NULL))
+		{
+			for (i = 0; i < k; i++)
+				prv = prv->next;
+			rmv = set;
+			set = set->next;
+			prv->next = set;
+			rmv->next = NULL;
+			free(rmv);
+			return (1);
+		}
 		set = set->next;
 		k++;
-	}
-	prv = (*head);
-	if ((k == index) && (set != NULL))
-	{
-		for (i = 0; i < k; i++)
-			prv = prv->next;
-		rmv = set;
-		set = set->next;
-		prv->next = set;
-		rmv->next = NULL;
-		free(rmv);
-		return (1);
 	}
 	return (-1);
 }
