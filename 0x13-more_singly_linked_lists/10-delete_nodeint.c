@@ -19,9 +19,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	set = (*head);
 	prv = (*head);
-	while ((k <= index) || (set != NULL))
+	while (k <= index)
 	{
-		if ((k == index) && (set != NULL))
+		if (set == NULL)
+			return (NULL);
+		if (k == index)
 		{
 			for (i = 0; i < k; i++)
 				prv = prv->next;
