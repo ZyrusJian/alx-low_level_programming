@@ -1,5 +1,38 @@
 #include "lists.h"
 
+
+/**
+ * get_nodeint_at_index - reterives nth node
+ * @head: pointer to the existing list
+ * @index: nth node
+ *
+ * Return: pointer to nth node
+ */
+
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+	listint_t *set;
+	unsigned int k;
+
+	k = 0;
+	if (head == NULL)
+		return (NULL);
+
+	set = head;
+	while (k <= index)
+	{
+		if (set == NULL)
+			return (NULL);
+		if (k == index)
+		{
+			return (set);
+		}
+		set = set->next;
+		k++;
+	}
+	return (NULL);
+}
+
 /**
  * insert_nodeint_at_index - reterives nth node
  * @head: pointer to the existing list
@@ -12,9 +45,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *set, *new, *prv;
-	unsigned int k, i;
 
-	k = 0;
 	if ((*head) == NULL)
 		return (NULL);
 
@@ -24,20 +55,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new = malloc(sizeof(listint_t));
 	new->n = n;
 	new->next = NULL;
-	while (k <= idx)
-	{
-		if (set == NULL)
-			return (NULL);
-		if (k == idx)
-		{
-			for (i = 0; i < k; i++)
-				prv = prv->next;
-			prv->next = new;
-			new->next = set;
-			return (new);
-		}
-		set = set->next;
-		k++;
-	}
-	return (NULL);
+	prv = get_nodeint_at_index((*head), idx - 1);
+	set =  get_nodeint_at_index((*head), idx);
+	if ((prv == NULL) || (set == NULL))
+		return (NULL);
+	prv->next = new;
+	new->next = set;
+	return (get_nodeint_at_index((*head), idx));
 }
