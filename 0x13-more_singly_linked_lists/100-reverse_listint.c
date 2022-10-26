@@ -11,8 +11,10 @@
 listint_t *rvr_list(listint_t *head)
 {
 	listint_t *rvr, *set;
+
 	set = head;
 	rvr = NULL;
+
 	if (set != NULL)
 	{
 		rvr = rvr_list(set->next);
@@ -31,6 +33,8 @@ listint_t *rvr_list(listint_t *head)
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *rvr;
+
 	rvr = (*head);
+
 	return (rvr_list(rvr));
 }
