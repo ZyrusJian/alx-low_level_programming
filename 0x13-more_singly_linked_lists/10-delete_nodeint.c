@@ -29,9 +29,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 				prv = prv->next;
 			rmv = set;
 			set = set->next;
-			prv->next = set;
 			rmv->next = NULL;
 			free(rmv);
+			prv->next = set;
 			return (1);
 		}
 		set = set->next;
