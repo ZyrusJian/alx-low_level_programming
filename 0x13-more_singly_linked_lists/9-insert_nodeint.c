@@ -20,6 +20,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	set = (*head);
 	prv = (*head);
+
+	new = malloc(sizeof(listint_t));
+	new->n = n;
+	new->next = NULL;
 	while (k <= idx)
 	{
 		if (set == NULL)
@@ -28,10 +32,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			for (i = 0; i < k; i++)
 				prv = prv->next;
-			new = malloc(sizeof(listint_t));
-			new->n = n;
-			new->next = set;
 			prv->next = new;
+			new->next = set;
 			return (new);
 		}
 		set = set->next;
