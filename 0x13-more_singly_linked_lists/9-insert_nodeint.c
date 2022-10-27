@@ -65,9 +65,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		prv = get_nodeint_at_index((*head), idx - 1);
 		set =  get_nodeint_at_index((*head), idx);
 		if (prv == NULL)
+		{
+			free(new);
 			return (NULL);
+		}
 		prv->next = new;
-		new->next = set;
+		prv = prv->next;
+		prv->next = set;
 	}
+
 	return (get_nodeint_at_index((*head), idx));
 }
