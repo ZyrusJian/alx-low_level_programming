@@ -28,6 +28,7 @@ int main(void)
 	insert_nodeint_at_index(&head, 10, 909);
 	insert_nodeint_at_index(&head, 12, 777);
 	insert_nodeint_at_index(&head, -1, 404);
+	insert_nodeint_at_index(&head, 3, 'k');
 	print_listint(head);
 	free_listint2(&head);
 	return (0);
