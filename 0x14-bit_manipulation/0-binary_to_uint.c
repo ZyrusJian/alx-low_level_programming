@@ -5,10 +5,10 @@ int _powr(int x, int y);
 const char *_reversebit(const char *s);
 
 /**
- * binary_to_int - converts binary to unsigned int
+ * binary_to_uint - converts binary to unsigned int
  * @b: target string
  *
- * returm: int or 0 on fail
+ * Return: int or 0 on fail
  */
 
 unsigned int binary_to_uint(const char *b)
@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
 	const char *binary;
 	unsigned int num, bit;
 
-	i =0;
+	i = 0;
 	if (b == NULL)
 		return (0);
 	if (check_binary(b) == 0)
@@ -36,7 +36,7 @@ unsigned int binary_to_uint(const char *b)
  * check_binary - checks string is madeup of only 0 and 1
  * @s: target string
  *
- * return: 1 on succes and 0 on fail
+ * Return: 1 on succes and 0 on fail
  */
 
 int check_binary(const char *s)
@@ -71,7 +71,7 @@ int _powr(int x, int y)
  * _reversebit - reverse binary string
  * @s: target string
  *
- * return: reverse string
+ * Return: reverse string
  */
 
 const char *_reversebit(const char *s)
