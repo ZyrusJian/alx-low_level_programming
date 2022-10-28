@@ -92,7 +92,7 @@ char *_reversebit(const char *s)
 	{
 		while (s[i] != '\0')
 		{
-			swap[i] = s[len-1];
+			swap[i] = s[len - 1];
 			i++;
 			len--;
 		}
