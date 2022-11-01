@@ -19,7 +19,7 @@ int _sqrt_recursion(int n)
 	if (n == 0)
 		return (-1);
 	x = 0;
-	x = _guess(1, n);
+	x = _guess(0, n);
 	printf("%d\n", x);
 	ans = _powr(x, 2);
 	if (ans == n)
@@ -54,7 +54,8 @@ int _powr(int x, int y)
 
 int _guess(int k, int n)
 {
+	k++;
 	if ((_powr(k, 2)) <= n)
-		_guess(k + 1, n);
+		_guess(k, n);
 	return (k);
 }
