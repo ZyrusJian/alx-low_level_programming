@@ -47,12 +47,12 @@ int _powr(int x, int y)
  * @k: initial number
  * @n: number to compute sqare root
  *
- * return: square root guess
+ * Return: square root guess
  */
 
 int _guess(int k, int n)
 {
-	if ((_powr(k, 2)) < n)
+	if ((_powr(k, 2)) <= n)
 		_guess(k + 1, n);
 	return (_powr(k, 2));
 }
