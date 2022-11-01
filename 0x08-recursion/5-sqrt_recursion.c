@@ -56,7 +56,7 @@ int _guess(int k, int n)
 	if ((_powr(k, 2)) < n)
 	{
 		k++;
-		_guess(k, n);
+		_guess(k + 1, n);
 	}
 	return (_powr(k, 2));
 }
