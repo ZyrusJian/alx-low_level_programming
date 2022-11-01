@@ -52,7 +52,9 @@ int _powr(int x, int y)
 
 int _guess(int k, int n)
 {
-	if ((_powr(k, 2)) <= n)
-		_guess(k + 1, n);
-	return (_powr(k, 2));
+	if ((_powr(k, 2)) >= n)
+		return (_powr(k, 2));
+	k++;
+	_guess(k, n);
+	return (-1);
 }
