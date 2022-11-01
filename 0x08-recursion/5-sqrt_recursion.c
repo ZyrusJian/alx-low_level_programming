@@ -20,6 +20,7 @@ int _sqrt_recursion(int n)
 	if (n == 0)
 		return (-1);
 	ans = _guess(1, n);
+	printf("%d", ans);
 	if (ans == n)
 		return (ans);
 	return (-1);
