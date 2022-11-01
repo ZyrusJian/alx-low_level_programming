@@ -13,6 +13,7 @@ int _guess(int k, int n);
 int _sqrt_recursion(int n)
 {
 	int ans;
+
 	ans = 0;
 	if (n < 0)
 		return (-1);
@@ -53,5 +54,5 @@ int _guess(int k, int n)
 {
 	if ((_powr(k, 2)) < n)
 		_guess(k + 1, n);
-	return (_powr(k,2));
+	return (_powr(k, 2));
 }
