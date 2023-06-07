@@ -1,7 +1,5 @@
 #include "main.h"
 
-int _powr(int x, int y);
-int _guess(int k, int n);
 
 /**
  * _sqrt_recursion - compute the square root of a number
@@ -12,50 +10,30 @@ int _guess(int k, int n);
 
 int _sqrt_recursion(int n)
 {
-	int ans, x;
-
 	if (n < 0)
 		return (-1);
+
 	if (n == 0)
-		return (-1);
-	x = 0;
-	x = _guess(0, n);
-	printf("%d\n", x);
-	ans = _powr(x, 2);
-	if (ans == n)
-		return (ans);
-	return (-1);
+		return (0);
+
+	return _sqrt_gues(n, 1);
 }
 
 /**
- * _powr - compute x raised to power of y
- * @x: base no.
- * @y: power to raise
+ * _sqrt_gues - compute the square root of a number
+ * @n: target number
+ * @a: number of guess
  *
  * Return: result of computation
  */
 
-int _powr(int x, int y)
+int _sqrt_gues(int n, int a)
 {
-	if (y < 0)
+	if (a * a > n)
 		return (-1);
-	if (y == 0)
-		return (1);
-	return (x * _powr(x, y - 1));
-}
 
-/**
- * _guess- guess the square root of number
- * @k: initial number
- * @n: number to compute sqare root
- *
- * Return: square root guess
- */
+	if (a * a == n)
+		return (a);
 
-int _guess(int k, int n)
-{
-	k++;
-	if ((_powr(k, 2)) <= n)
-		_guess(k, n);
-	return (k);
+	return _sqrt_gues(n, a + 1);
 }
