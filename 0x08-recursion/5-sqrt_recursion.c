@@ -17,7 +17,7 @@ int _sqrt_recursion(int n)
 	if (n == 0)
 		return (0);
 
-	return _sqrt_gues(n, 1);
+	return (_sqrt_gues(n, 1));
 }
 
 /**
@@ -36,5 +36,5 @@ int _sqrt_gues(int n, int a)
 	if (a * a == n)
 		return (a);
 
-	return _sqrt_gues(n, a + 1);
+	return (_sqrt_gues(n, (a + 1)));
 }
