@@ -61,24 +61,21 @@ int _cents(int n)
 				return (ncent);
 			}
 		}
+		r = n;
+
 		for (i = 0; i < 5; i++)
 		{
-			if (n > coin[i])
+			if ((r > coin[i]) && (r != 0))
 			{
-				ncent = n / coin[i];
-				r = n % coin[i];
-				if (r != 0)
+				for (q = 0; q < 5; q++)
 				{
-					for (q = i + 1; q < 5; q++)
+					if (r > coin[q])
 					{
-						if (r > coin[q])
-						{
-							ncent = ncent + (r / coin[q]);
-							r = r % coin[q];
-						}
+						ncent = ncent + (r / coin[q]);
+						r = r % coin[q];
 					}
-					ncent = ncent + r;
 				}
+				ncent = ncent + r;
 				return (ncent);
 			}
 		}
