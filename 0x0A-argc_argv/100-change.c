@@ -58,6 +58,7 @@ int _cents(int n)
 			if (n == coin[i])
 			{
 				ncent = 1;
+				return (ncent);
 			}
 		}
 		for (i = 0; i < 5; i++)
