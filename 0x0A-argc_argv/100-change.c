@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
 int _cents(int n)
 {
-	int ncent, i;
+	int ncent, i, r, q;
 	int coin[5] = {25, 10, 5, 2, 1};
 
 	ncent = 0;
@@ -55,9 +55,29 @@ int _cents(int n)
 	{
 		for (i = 0; i < 5; i++)
 		{
-			if (n % coin[i] == 0)
+			if (n == coin[i])
+			{
+				ncent = 1;
+			}
+		}
+		for (i = 0; i < 5; i++)
+		{
+			if (n > coin[i])
 			{
 				ncent = n / coin[i];
+				r = n % coin[i];
+				if (r != 0)
+				{
+					for (q = i + 1; q < 5; q++)
+					{
+						if (r > coin[q])
+						{
+							ncent = ncent + (r / coin[q]);
+							r = r % coin[q];
+						}
+					}
+					ncent = ncent + r;
+				}
 				return (ncent);
 			}
 		}
