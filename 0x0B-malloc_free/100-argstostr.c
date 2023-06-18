@@ -10,7 +10,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	char *strconc;
+	char *strconc, *nline;
 	unsigned int size, i, j;
 
 	if ((ac <= 0) || (av == NULL))
@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 	}
 	/* calculate toal mem to be allocated and check malloc return */
 	size = 0;
-	for (int i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		size += strlen(av[i]) + 1;
 	}
@@ -30,13 +30,14 @@ char *argstostr(int ac, char **av)
 	}
 	/* combine args in to string in the allocated mem */
 	size = 0;
+	nline = "\n";
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
 		{
 			strconc[size++] = av[i][j];
 		}
-		strconc[size++] = "\n";
+		strconc[size++] = nline;
 	}
 	return (strconc);
 }
