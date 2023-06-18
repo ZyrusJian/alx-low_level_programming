@@ -11,7 +11,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *strconc, *nline;
-	unsigned int size, i, j;
+	int size, i, j;
 
 	if ((ac <= 0) || (av == NULL))
 	{
@@ -37,7 +37,7 @@ char *argstostr(int ac, char **av)
 		{
 			strconc[size++] = av[i][j];
 		}
-		strconc[size++] = nline;
+		strconc[size++] = *nline;
 	}
 	return (strconc);
 }
