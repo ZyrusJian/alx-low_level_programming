@@ -1,7 +1,5 @@
 #include "main.h"
 
-void _free(int **arr, int height);
-
 /**
  * **alloc_grid - creates a 2d array of unkown size using malloc
  * @width: column of the 2d array.
@@ -33,40 +31,20 @@ int **alloc_grid(int width, int height)
 		arr[i] = (int *)malloc(width * sizeof(int));
 		if (arr[i] == NULL)
 		{
-			free(arr[i]);
+			for (j = 0; j < i; j++)
+			{
+				free(arr[j]);
+			}
 			free(arr);
 			return (NULL);
 		}
-	}
+
 	/* initialize 2d array */
-	for (i = 0; i < height; i++)
-	{
+
 		for (j = 0; j < width; j++)
 		{
 			arr[i][j] = 0;
 		}
 	}
-	if (arr == NULL)
-	{
-		_free(arr, height);
-		return (NULL);
-	}
-	_free(arr, height);
 	return (arr);
-}
-/**
- * _free - free the 2d array memory allocation
- * @arr: 2d array.
- * @height: rows of the 2d array.
- *
- */
-void _free(int **arr, int height)
-{
-	int i;
-	/* free allocated memory */
-	for (i = 0; i < height; i++)
-	{
-		free(arr[i]);
-	}
-	free(arr);
 }
