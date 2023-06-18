@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *str_concat - combines all arguments into one string using malloc
+ * *argstostr - combines all arguments into one string using malloc
  * @ac: number of args to be linked.
  * @av: args to be linked.
  *
@@ -10,7 +10,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	char *strconc, *nline;
+	char *strconc, *nline, *end;
 	int size, i, j;
 
 	if ((ac <= 0) || (av == NULL))
@@ -31,6 +31,7 @@ char *argstostr(int ac, char **av)
 	/* combine args in to string in the allocated mem */
 	size = 0;
 	nline = "\n";
+	end = "\0";
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
@@ -39,5 +40,6 @@ char *argstostr(int ac, char **av)
 		}
 		strconc[size++] = *nline;
 	}
+	strconc[size++] = *end;
 	return (strconc);
 }
