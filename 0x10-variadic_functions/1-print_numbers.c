@@ -17,8 +17,12 @@ char insert_separator(const char *s)
 	char *str;
 
 	str = (char *)malloc(strlen(s) * sizeof(char));
-	i = 0;
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 
+	i = 0;
 
 	while (*s != '\0')
 	{
@@ -26,7 +30,7 @@ char insert_separator(const char *s)
 		s++;
 		i++;
 	}
-	return (printf("%s", str));
+	return (str);
 }
 
 /**
@@ -51,7 +55,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			num = va_arg(ap, int);
 			printf("%d", num);
 			if (i != (n - 1))
-				insert_separator(separator);
+				printf("%s", insert_separator(separator));
 		}
 		printf("\n");
 		va_end(ap);
