@@ -1,38 +1,6 @@
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdlib.h>
 #include <stdarg.h>
-
-/**
- * insert_separator - inserts separator
- * @s: separating char
- *
- * Return: separator
- */
-
-char insert_separator(const char *s)
-{
-	int i;
-	char *str;
-
-	str = (char *)malloc(strlen(s) * sizeof(char));
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-
-	i = 0;
-
-	while (*s != '\0')
-	{
-		str[i] = *s;
-		s++;
-		i++;
-	}
-	return (str);
-}
-
+#include <stdlib.h>
 /**
  * print_numbers - prints numbers separated by separator
  * @n: arg count
@@ -46,18 +14,20 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	int num;
 	unsigned int i;
 
-	if (separator != NULL)
-	{
-		va_start(ap, n);
+	va_start(ap, n);
 
-		for (i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
+	{
+		num = va_arg(ap, int);
+		printf("%d", num);
+
+		if (separator != NULL && i != (n - 1))
 		{
-			num = va_arg(ap, int);
-			printf("%d", num);
-			if (i != (n - 1))
-				printf("%s", insert_separator(separator));
+			printf("%s", separator);
 		}
-		printf("\n");
-		va_end(ap);
 	}
+
+	printf("\n");
+
+	va_end(ap);
 }
