@@ -4,31 +4,6 @@
 #include <stdarg.h>
 
 /**
- * insert_separator - inserts separator
- * @s: separating char
- *
- * Return: separator
- */
-
-char insert_separator(const char *s)
-{
-	int i;
-	char *str;
-
-	str = (char *)malloc(strlen(s) * sizeof(char));
-	i = 0;
-
-
-	while (*s != '\0')
-	{
-		str[i] = *s;
-		s++;
-		i++;
-	}
-	return (printf("%s", str));
-}
-
-/**
  * print_strings - prints strings separated by separator
  * @n: arg count
  * @separator: insersts separating character
@@ -67,8 +42,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			{
 				str = va_arg(ap, char*);
 				printf("%s", str);
-				if (i != (n - 1))
-					insert_separator(separator);
+				if ((separator != NULL) && (i != (n - 1)))
+				{
+					printf("%s", separator);
+				}
 			}
 			printf("\n");
 			va_end(ap);
