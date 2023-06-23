@@ -66,7 +66,7 @@ void print_all(const char * const format, ...)
 				printf("%s", str);
 				break;
 		}
-		(argii != (fcount - 1)) && (printf(", "), 1);
+		(argi != (fcount - 1)) && (printf(", "), 1);
 		argi++;
 	}
 	va_end(list);
