@@ -32,7 +32,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		va_end(ap);
 		if (nullcount > 0)
 		{
-			printf("(nill)\n");
+			printf("(nil)\n");
 		}
 		else
 		{
