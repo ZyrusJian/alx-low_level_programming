@@ -22,7 +22,4 @@ void free_list(list_t *head)
 		free(head);
 		head = set;
 	}
-	head = NULL;
-	if (head == NULL)
-		exit(0);
 }
