@@ -9,10 +9,16 @@
 
 unsigned long int decimal_to_binary(unsigned long int n)
 {
-	if (n == 0)
-		return (0);
+	unsigned long int binary, base;
 
-	unsigned long int binary = 0, base = 1;
+	if (n == 0)
+	{
+		binary = 0;
+		return (binary);
+	}
+
+	binary = 0;
+	base = 1;
 
 	while (n > 0)
 	{
@@ -32,18 +38,25 @@ unsigned long int decimal_to_binary(unsigned long int n)
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int binary = decimal_to_binary(n);
+	unsigned long int binary, bit, temp;
 	int i, bitcount;
 
+	binary = decimal_to_binary(n);
 	bitcount = 0;
 
-	while (binary != 0)
+	if (binary == 0)
+		_putchar('0');
+
+	temp = binary;
+	while (temp != 0)
 	{
-		binary /= 10;
 		bitcount++;
+		temp >>= 1;
 	}
-	for (i = bitcount; i >= 0; i--)
+	for (i = bitcount - 1; i > 0; i--)
 	{
-		_putchar((binary >> i) & 1 ? '1' : '0');
+		temp = binary;
+		bit = ((temp >> i) & 1);
+		_putchar(bit ? '1' : '0');
 	}
 }
