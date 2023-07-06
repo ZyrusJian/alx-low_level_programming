@@ -35,6 +35,8 @@ void print_binary(unsigned long int n)
 	unsigned long int binary = decimal_to_binary(n);
 	int i, bitcount;
 
+	bitcount = 0;
+
 	while (binary != 0)
 	{
 		binary /= 10;
