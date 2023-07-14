@@ -61,3 +61,20 @@ void cp_file(char *file_from, char *file_to)
 	if (close(fd_to) == -1)
 		error_exit(100, "error: can't close fd ", file_to);
 }
+
+/**
+ * main - Entry point, copy file content from arguments
+ * @argc: The argument count
+ * @argv: The argument vector
+ * Return: 0 on success, otherwise 97
+ */
+
+int main(int argc, char *argv[])
+{
+	if (argc != 3)
+		error_exit(97, "usage: cp: ", "file_from file_to\n");
+
+	cp_file(argv[1], argv[2]);
+
+	return (0);
+}
