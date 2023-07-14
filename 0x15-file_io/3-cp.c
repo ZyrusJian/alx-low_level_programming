@@ -3,6 +3,7 @@
 #define BUFFER_SIZE 1024
 #define PERMISSION  (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
+int _putchar(char c);
 
 /**
  * error_exit - Print error message and exit with specified code
@@ -77,4 +78,17 @@ int main(int argc, char *argv[])
 	cp_file(argv[1], argv[2]);
 
 	return (0);
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
