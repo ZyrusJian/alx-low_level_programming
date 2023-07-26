@@ -1,62 +1,30 @@
-#include "main.h"
+#include <main.h>
+
 
 /**
- * decimal_to_binary - Converts a decimal number to binary
- * @n: The decimal number to be converted
- *
- * Return: The binary representation of the decimal number
- */
-
-unsigned long int decimal_to_binary(unsigned long int n)
-{
-	unsigned long int binary, base;
-
-	if (n == 0)
-	{
-		binary = 0;
-		return (binary);
-	}
-
-	binary = 0;
-	base = 1;
-
-	while (n > 0)
-	{
-		if (n & 1)
-			binary += base;
-
-		n >>= 1;
-		base *= 10;
-	}
-	return (binary);
-}
-
-/**
- * print_binary - Prints the binary representation of a decimal number
- * @n: The decimal number to be printed in binary form
+ * print_binary - Prints the binary representation of a number
+ * @n: The number to be printed
  */
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int binary, bit, temp;
-	int i, bitcount;
+	unsigned long int mask;
 
-	binary = decimal_to_binary(n);
-	bitcount = 0;
-
-	if (binary == 0)
+	if (n == 0)
+	{
 		_putchar('0');
-
-	temp = binary;
-	while (temp != 0)
-	{
-		bitcount++;
-		temp >>= 1;
+		return;
 	}
-	for (i = bitcount - 1; i > 0; i--)
+
+	mask = 1UL << ((sizeof(unsigned long int) * 8) - 1);
+
+	while (mask > 0)
 	{
-		temp = binary;
-		bit = ((temp >> i) & 1);
-		_putchar(bit ? '1' : '0');
+		if (n & mask)
+			_putchar('1');
+		else
+			_putchar('0');
+
+		mask >>= 1;
 	}
 }
