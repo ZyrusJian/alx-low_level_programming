@@ -73,7 +73,7 @@ void cp_file(char *file_from, char *file_to)
 int main(int argc, char *argv[])
 {
 	if (argc != 3)
-		error_exit(97, "usage: cp: ", "file_from file_to\n");
+		error_exit(97, "usage: cp ", "file_from file_to\n");
 
 	cp_file(argv[1], argv[2]);
 
