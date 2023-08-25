@@ -1,2 +1,5 @@
 #!/bin/bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -c *.c | gcc -shared -o liball.so *.o
+for file in *.c; do
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -c "$file"
+done
+gcc -shared -o liball.so *.o
